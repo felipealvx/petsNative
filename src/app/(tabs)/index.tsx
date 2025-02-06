@@ -5,10 +5,9 @@ import colors from "@/src/constants/colors";
 
 export default function Home(){
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <Search text="Pesquisar Pet"/>
       <CardPet />
-      <Text style={styles.textBottom}>Fim dos pets</Text>
     </SafeAreaView>
   )
 }

@@ -2,11 +2,20 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import colors from '@/src/constants/colors';
 import { Tabs } from 'expo-router';
+import { Pressable } from 'react-native';
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: colors.primary,
-      headerTitleAlign: 'center'
+    <Tabs screenOptions={{ 
+      tabBarActiveTintColor: colors.primary,
+      headerTitleAlign: 'center',
+      tabBarStyle: {
+        height: 60,
+        alignItems: 'center',
+      },
+      tabBarLabelStyle: {
+        fontSize: 12,
+      },
      }}>
       <Tabs.Screen
         name="index"
