@@ -1,4 +1,4 @@
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import pets from "@/src/data/pets";
 import colors from "@/src/constants/colors";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -8,7 +8,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 export default function CardPet(){
 
   const renderItem = ({item}: any) => (
-    <SafeAreaView>
+    <ScrollView>
         <View style={styles.container}>
           <View>
             <Image
@@ -41,7 +41,7 @@ export default function CardPet(){
             </TouchableOpacity>
           </View>
         </View>
-    </SafeAreaView>
+    </ScrollView>
   )
 
   return (
@@ -49,17 +49,18 @@ export default function CardPet(){
       data={pets}
       renderItem={renderItem}
       keyExtractor={(item) => item.id.toString()}
+      ListFooterComponent={<Text style={styles.textBottom}>Fim dos Pets!</Text>}
     />
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#e1e1e1",
+    backgroundColor: "#f1f1f1",
     padding: 10,
     borderRadius: 13,
     marginHorizontal: 20,
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: "row",
     gap: 10,
     flex: 1,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
   infoText: {
     flexDirection: 'row',
     flex: 1,
-    backgroundColor: "#cccaca",
+    backgroundColor: "#e1e1e1",
     padding: 2,
     borderRadius: 4,
     paddingHorizontal: 4,
@@ -91,5 +92,10 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 7.5,
     marginTop: 5
+  },
+  textBottom: {
+    textAlign: 'center',
+    margin: 20,
+    color: colors.sageGrey,
   }
 });

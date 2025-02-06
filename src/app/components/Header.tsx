@@ -1,11 +1,19 @@
 import { StyleSheet, TextInput, TouchableOpacity, View, Text } from "react-native";
 import colors from "@/src/constants/colors";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { useState } from "react";
+import { Link } from "expo-router";
 
 type searchProps = {
   text: string;
 }
 
-export default function Search({text}: searchProps) {
+export default function Header({text}: searchProps) {
+
+  const [openModal, setOpenModal] = useState<Boolean>(false);
+
+
+
   return (
     <View style={styles.container}>
       <TextInput 
@@ -14,6 +22,10 @@ export default function Search({text}: searchProps) {
       />
       <TouchableOpacity style={styles.button}>
         <Text style={{color: colors.primary}}>Pesquisar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Ionicons name="add-circle" size={50} color={colors.primary} />
       </TouchableOpacity>
     </View>
   )
@@ -29,13 +41,14 @@ const styles = StyleSheet.create ({
     marginTop: 20,
   },
   input: {
-    backgroundColor: "#e1e1e1",
+    backgroundColor: "#f1f1f1",
     padding: 15,
     borderRadius: 13,
     flex: 1,
-    color: colors.sageGrey
+    color: colors.sageGrey,
+    marginBottom: 10,
   },
   button: {
-    paddingVertical: 20,
+    paddingVertical: 10,
   }
 })

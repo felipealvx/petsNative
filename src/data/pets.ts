@@ -25,11 +25,11 @@ const pets = [
   },
   {
     id: 4,
-    name: "Pipoca",
+    name: "Pernalonga",
     age: 1,
-    favoriteFood: "Sementes de girassol",
+    favoriteFood: "Cenoura",
     vacina: "09/05/2025",
-    image: require("../assets/images/parrot.jpg")
+    image: require("../assets/images/rabbit.jpg")
   }
 ];
 
