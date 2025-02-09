@@ -10,6 +10,9 @@ export default function TabLayout() {
     <Tabs screenOptions={{ 
       tabBarActiveTintColor: colors.primary,
       headerTitleAlign: 'center',
+      headerStyle: {
+        backgroundColor: '#f4f4f4'
+      },
       headerShadowVisible: false,
       tabBarStyle: {
         height: 60,

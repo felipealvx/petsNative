@@ -5,7 +5,7 @@ import colors from "@/src/constants/colors";
 
 export default function Home(){
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f4f4f4'}}>
       <Header text="Pesquisar Pet" /> 
       <CardPet />
     </SafeAreaView>
@@ -13,5 +13,4 @@ export default function Home(){
 }
 
 const styles = StyleSheet.create ({
-
 })
