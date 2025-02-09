@@ -13,6 +13,7 @@ import colors from "@/src/constants/colors";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Foundation from "@expo/vector-icons/Foundation";
 
 export default function CardPet() {
   const renderItem = ({ item }: any) => (
@@ -28,48 +29,44 @@ export default function CardPet() {
           </View>
           <View style={styles.infoContent}>
             <View style={styles.viewText}>
-              <View>
-                <Text
-                  style={{
-                    fontSize: 24,
-                    color: colors.primary,
-                    fontWeight: "bold",
-                  }}
-                >
-                  {item.name}{" "}
-                </Text>
-                <Text>
+              <View style={styles.headerCard}>
+                <View style={styles.nameAndSex}>
+                  <Text
+                    style={{
+                      fontSize: 24,
+                      color: colors.primary,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {item.name}{" "}
+                  </Text>
+                  <View>
+                    {item.sex == "male" ? (
+                      <Foundation name="male-symbol" size={28} color="blue" />
+                    ) : (
+                      <Foundation name="female-symbol" size={28} color="pink" />
+                    )}
+                  </View>
+                </View>
+                <Text style={{ fontWeight: "bold" }}>
                   {item.age} {item.age == 1 ? "ano" : "anos"}
                 </Text>
               </View>
 
-              {/* <View style={styles.infoText}>
-                <Text>
-                  Idade: {item.age} {item.age == 1 ? "ano" : "anos"}{" "}
-                </Text>
-                <FontAwesome
-                  name="calendar-o"
-                  size={20}
-                  color={colors.sageGrey}
-                />
-              </View> */}
-
               <View style={styles.infoText}>
-                <Text>{item.favoriteFood}</Text>
-                <MaterialIcons
-                  name="fastfood"
-                  size={20}
-                  color={colors.sageGrey}
-                />
-              </View>
-
-              <View style={styles.infoText}>
-                <Text>Vacinação: {item.vacina}</Text>
-                <FontAwesome5
-                  name="syringe"
-                  size={20}
-                  color={colors.sageGrey}
-                />
+                <View style={styles.vacina}>
+                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                    Última Vacina
+                  </Text>
+                  <Text style={{ fontSize: 16 }}>{item.vacina}</Text>
+                </View>
+                <View style={{borderBottomWidth: 0.5}}/>
+                <View style={styles.vacina}>
+                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                    Próx. Vacina
+                  </Text>
+                  <Text style={{ fontSize: 16 }}>{item.proxVacina}</Text>
+                </View>
               </View>
             </View>
           </View>
@@ -117,17 +114,28 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
   },
+  headerCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  nameAndSex: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+  },
   viewText: {
     gap: 5,
   },
   infoText: {
-    flexDirection: "row",
     flex: 1,
-    backgroundColor: "#e1e1e1",
-    padding: 2,
+    backgroundColor: "#f4f4f4",
+    padding: 5,
     borderRadius: 4,
-    paddingHorizontal: 4,
-    alignItems: "center",
+    gap: 15,
+  },
+  vacina: {
+    flexDirection: "row",
     justifyContent: "space-between",
   },
   button: {

@@ -5,6 +5,7 @@ const pets = [
     age: 3,
     favoriteFood: "Osso de borracha",
     vacina: "12/10/2025",
+    proxVacina: "11/12/2025",
     sex: "male",
     image: require("../assets/images/dog.png")
   },
@@ -14,6 +15,7 @@ const pets = [
     age: 2,
     favoriteFood: "Peixe assado",
     vacina: "23/11/2025",
+    proxVacina: "11/12/2026",
     sex: "female",
     image: require("../assets/images/cat.jpg")
   },
@@ -23,6 +25,7 @@ const pets = [
     age: 1,
     favoriteFood: "Sementes de girassol",
     vacina: "09/05/2025",
+    proxVacina: "10/09/2026",
     sex: "male",
     image: require("../assets/images/parrot.jpg")
   },
@@ -32,6 +35,7 @@ const pets = [
     age: 1,
     favoriteFood: "Cenoura",
     vacina: "09/05/2025",
+    proxVacina: "04/01/2026",
     sex: "male",
     image: require("../assets/images/rabbit.jpg")
   }
