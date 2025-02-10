@@ -18,11 +18,9 @@ export default function InitialScreen() {
         </View>
         <View style={styles.buttonContent}>
           <Text style={{textAlign: 'center'}}>Ao continuar você fará o cadastro do seu primeiro pet.</Text>
-          <TouchableOpacity style={styles.buttonContinue}>
-            <Link push href={'/(tabs)'} style={styles.link}>
-              <Text style={styles.continueText}>Continuar</Text>
-            </Link>
-          </TouchableOpacity>
+          <Link push href={'/(tabs)'} style={styles.link}>
+            <Text style={styles.continueText}>Continuar</Text>
+          </Link>
         </View>
       </View>
     </SafeAreaView>
@@ -53,19 +51,10 @@ const styles = StyleSheet.create ({
     width: '100%',
     gap: 12,
   },
-  buttonContinue: {
-    backgroundColor: colors.primary,
-    height: 60,
-    borderRadius: 13,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   link: {
     backgroundColor: colors.primary,
-    flex: 1,
     borderRadius: 13,
-    alignItems: 'center',
-    justifyContent: 'center'
+    padding: 20,
   },
   continueText: {
     fontSize: 18,

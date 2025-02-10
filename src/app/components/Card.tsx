@@ -10,12 +10,10 @@ import {
 } from "react-native";
 import pets from "@/src/data/pets";
 import colors from "@/src/constants/colors";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Foundation from "@expo/vector-icons/Foundation";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
-export default function CardPet() {
+export default function CardPet() {  
   const renderItem = ({ item }: any) => (
     <ScrollView>
       <View style={styles.card}>
@@ -55,7 +53,7 @@ export default function CardPet() {
 
               <View style={styles.infoText}>
                 <View style={styles.vacina}>
-                  <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                  <Text style={{ fontWeight: "bold", fontSize: 16,}}>
                     Última Vacina
                   </Text>
                   <Text style={{ fontSize: 16 }}>{item.vacina}</Text>
@@ -72,7 +70,8 @@ export default function CardPet() {
           </View>
         </View>
         <TouchableOpacity style={styles.button}>
-          <Text style={{ color: colors.offWhite }}>Ver informações</Text>
+          <Text style={styles.textButtom}>Ver informações</Text>
+          <MaterialIcons name="keyboard-arrow-right" size={24} color={colors.offWhite} />
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -132,11 +131,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#f4f4f4",
     padding: 5,
     borderRadius: 4,
-    gap: 15,
+    gap: 10,
   },
   vacina: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: 'center',
   },
   button: {
     backgroundColor: colors.primary,
@@ -144,10 +144,19 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     marginTop: 5,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 5
   },
   textBottom: {
     textAlign: "center",
     margin: 20,
     color: colors.sageGrey,
   },
+  textButtom: {
+    color: colors.offWhite,
+    fontWeight: 'bold',
+    fontSize: 16,
+  }
 });
